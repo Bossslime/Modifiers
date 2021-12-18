@@ -1,0 +1,49 @@
+# _   _      _ _
+#| | | | ___| | | ___
+#| |_| |/ _ \ | |/ _ \
+#|  _  |  __/ | | (_) |
+#|_| |_|\___|_|_|\___/
+#
+#Wecome to modifier config, here you can create modifiers, sorry if it is confusing, this is my first time working with configs to this extent
+#You can find the Potion Effect types on https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
+#
+#Support Discord: https://discord.gg/newXfqthCn
+
+Modifiers:
+   onKillRegeneration:
+      Modifier-Name: "KillRegen" #Sets the ingame modifier name
+      Modifier-Description: #Set the modifier description for the /modifiers GUI
+      - "&7The KillRegen modifier will"
+      - "&7grant a player &e&lREGENERATION"
+      - "&a2 &7for &c5 &7seconds."
+      Effects:
+         Enabled: true #Give an effect or not
+         Potion-Effect: "REGENERATION" #Sets the type of effect to give the player
+         Potion-Level: 2 #The potion effect level
+         Effect-Time: 5 #Potion time (In seconds)
+         Chance: 100 #Grants a 1 in ### chance to get effect, set to 1 to disable
+      Commands:
+         Enabled: false #Run a command or not
+         Chance: 100 #Grants a 1 in ### chance to run the command, set to 1 to disable
+         Run-Command: #Command to run. %Player% = Killer - No "/" Needed
+         - "testcommand %Player%"
+         
+   
+   onKillCommand:
+      Modifier-Name: "KillCommand"
+      Modifier-Description:
+         - "&7The KillCommand modifier will"
+         - "&7run a command when a player"
+         - "&7is killed"
+      Effects:
+         Enabled: false
+         Potion-Effect: "SPEED"
+         Potion-Level: 2
+         Effect-Time: 5
+         Chance: 100
+      Commands:
+         Enabled: true
+         Chance: 100
+         Run-Command:
+         - "give %Player% diamond 1"
+         - "msg %Player% Gamemode set to CREATIVE"

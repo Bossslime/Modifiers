@@ -1,0 +1,12 @@
+main: com.Bossslime.Modifier.Main
+name: Modifiers
+version: 1.0
+description: A plugin to Modify PVP
+author: Bossslime
+
+commands:
+ modifier:
+  description: Opens the Modifier toggle GUI
+
+ modifiers:
+  description: Player command to view active modifiers and their perks.

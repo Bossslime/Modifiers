@@ -1,0 +1,32 @@
+# _   _      _ _
+#| | | | ___| | | ___
+#| |_| |/ _ \ | |/ _ \
+#|  _  |  __/ | | (_) |
+#|_| |_|\___|_|_|\___/
+#
+#This is the language config section of the modifier plugin, you can edit almost every message here.
+#
+#Support Discord: https://discord.gg/newXfqthCn
+
+Errors:
+   NotHuman: "&cThis command can only be run by a player."
+   NoPerms: "&cI'm sorry but you dont have permission to execute this command."
+   NoActiveModifiers: "&c&lThere are currently no active modifiers." #This message can be disabled by setting it to null
+   
+Normal:
+   Prefix: "&7[&cModifiers&7] "
+   HelpMessage:
+   - "&7&m--------------------------"
+   - "&a&lModifier Help:"
+   - "&cInfo: <> - Required | [] - Optional"
+   - "&7"
+   - "&7- &a/modifier &7- &2Shows this help menu"
+   - "&7- &a/modifier toggle [Modifier] &7- &2Open the GUI to toggle modifiers or toggle a specific modifier"
+   - "&7- &a/modifier reload &7- &2Reload the modifier configs"
+   - "&7- &a/modifier language &7- &2Change the modifier plugin language"
+   - "&7- &a/modifiers &7- &2Open a GUI to list modifier info"
+   - "&7"
+   - "&7&m--------------------------"
+   
+   ReloadMessage: "&aThe config has been successfully reloaded."
+   HoverMessage: "&eUse \"&c/modifiers&e\" to view active modifiers"

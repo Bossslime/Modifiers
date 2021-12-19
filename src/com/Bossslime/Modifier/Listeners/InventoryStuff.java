@@ -50,32 +50,32 @@ public class InventoryStuff implements Listener{
 						if (Main.getSettingsConfig().getConfig().get("Modules." + key) == null) {
 							Main.getSettingsConfig().getConfig().set("Modules." + key, false);
 							Main.getSettingsConfig().save();
-							p.sendMessage(Chat.color("&e&lYou have &c&lDISABLED &e&l" + key));
+							p.sendMessage(Chat.color(Main.getLanguageConfig().getConfig().getString("ModifierEditing.ModfierDisabled") + key));
 							
 						}else if (Main.getSettingsConfig().getConfig().getBoolean("Modules." + key) == true) {
 							Main.getSettingsConfig().getConfig().set("Modules." + key, false);
 							Main.getSettingsConfig().save();
-							p.sendMessage(Chat.color("&e&lYou have &c&lDISABLED &e&l" + key));
+							p.sendMessage(Chat.color(Main.getLanguageConfig().getConfig().getString("ModifierEditing.ModfierDisabled") + key));
 						}else if (Main.getSettingsConfig().getConfig().getBoolean("Modules." + key) == false) {
 							Main.getSettingsConfig().getConfig().set("Modules." + key, true);
 							Main.getSettingsConfig().save();
-							p.sendMessage(Chat.color("&e&lYou have &a&lENABLED &e&l" + key));
+							p.sendMessage(Chat.color(Main.getLanguageConfig().getConfig().getString("ModifierEditing.ModifierEnabled") + key));
 						}
 						
 					}else if (e.getCurrentItem().equals((Object) Items.createItemByte(159, 5, 1, "&aEnable/Disable " + Main.getModifierConfig().getConfig().getString("Modifiers." + key + ".Modifier-Name"), "&7Click to Enable/Disable", "&7" + Main.getModifierConfig().getConfig().getString("Modifiers." + key + ".Modifier-Name"), "&7", "&7Current Status: &aEnabled"))) {
 						if (Main.getSettingsConfig().getConfig().get("Modules." + key) == null) {
 							Main.getSettingsConfig().getConfig().set("Modules." + key, false);
 							Main.getSettingsConfig().save();
-							p.sendMessage(Chat.color("&e&lYou have &c&lDISABLED &e&l" + key));
+							p.sendMessage(Chat.color(Main.getLanguageConfig().getConfig().getString("ModifierEditing.ModfierDisabled") + key));
 							
 						}else if (Main.getSettingsConfig().getConfig().getBoolean("Modules." + key) == true) {
 							Main.getSettingsConfig().getConfig().set("Modules." + key, false);
 							Main.getSettingsConfig().save();
-							p.sendMessage(Chat.color("&e&lYou have &c&lDISABLED &e&l" + key));
+							p.sendMessage(Chat.color(Main.getLanguageConfig().getConfig().getString("ModifierEditing.ModfierDisabled") + key));
 						}else if (Main.getSettingsConfig().getConfig().getBoolean("Modules." + key) == false) {
 							Main.getSettingsConfig().getConfig().set("Modules." + key, true);
 							Main.getSettingsConfig().save();
-							p.sendMessage(Chat.color("&e&lYou have &a&lENABLED &e&l" + key));
+							p.sendMessage(Chat.color(Main.getLanguageConfig().getConfig().getString("ModifierEditing.ModifierEnabled") + key));
 						}
 						
 					}
@@ -112,14 +112,27 @@ public class InventoryStuff implements Listener{
 			if (e.getCurrentItem().getTypeId() == 340) {
 				String languageName = e.getCurrentItem().getItemMeta().getDisplayName().substring(2);
 				if (languageName.equals(Main.getSettingsConfig().getConfig().getString("Language"))) {
-					e.getWhoClicked().sendMessage(Chat.color("&ePlugin language is already set to &a" + languageName + "&e."));
+					
+					String lP = Main.getLanguageConfig().getConfig().getString("Errors.PluginLanguageAlreadySet");
+					if (lP.contains("%L")) {
+    	        		lP = lP
+		        				.replace("%L", languageName);
+    	        	}
+					
+					e.getWhoClicked().sendMessage(Chat.color(lP));
 					
 				}else {
 					Main.getSettingsConfig().getConfig().set("Language", languageName);
 					Main.getSettingsConfig().save();
 					Main.setLanguangeConfig(languageName);
-					e.getWhoClicked().sendMessage(Chat.color("&ePlugin language has been set to &a" + languageName + "&e."));
 					
+					String lP = Main.getLanguageConfig().getConfig().getString("Normal.PluginLanguageSet");
+					if (lP.contains("%L")) {
+    	        		lP = lP
+		        				.replace("%L", languageName);
+    	        	}
+					
+					e.getWhoClicked().sendMessage(Chat.color(lP));
 				}
 				
 			}else if (e.getSlot() == 49) {

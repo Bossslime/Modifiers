@@ -31,7 +31,7 @@ public class OnJoin implements Listener{
 				Main.getSettingsConfig().save();
 				
 			}else if (Main.getSettingsConfig().getConfig().getBoolean("Modules." + key) == true) {
-	        	if (activeModifiers.equals(Chat.color("&eThe active modifiers are:"))) {
+	        	if (activeModifiers.equals(Chat.color(Main.getLanguageConfig().getConfig().getString("ModifierEditing.ActiveModifiers")))) {
 	        		activeModifiers = activeModifiers + Chat.color("&a " + Main.getModifierConfig().getConfig().getString("Modifiers." + key + ".Modifier-Name"));
 	        	}else {
 	        		activeModifiers = activeModifiers + Chat.color("&f, &a" + Main.getModifierConfig().getConfig().getString("Modifiers." + key + ".Modifier-Name"));
@@ -43,7 +43,7 @@ public class OnJoin implements Listener{
 			}
 			
 		}
-		if (activeModifiers.equals(Chat.color("&eThe active modifiers are:"))) {
+		if (activeModifiers.equals(Chat.color(Main.getLanguageConfig().getConfig().getString("ModifierEditing.ActiveModifiers")))) {
 			if (Main.getLanguageConfig().getConfig().get("Errors.NoActiveModifiers") == null) {
 				check = false;
 				

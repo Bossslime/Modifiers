@@ -14,6 +14,7 @@ Errors:
    NotHuman: "&cThis command can only be run by a player."
    NoPerms: "&cI'm sorry but you dont have permission to execute this command."
    NoActiveModifiers: "&c&lThere are currently no active modifiers." #This message can be disabled by setting it to null
+   PluginLanguageAlreadySet: "&ePlugin language is already set to &a %L&e."
    
 Normal:
    Prefix: "&7[&cModifiers&7] "
@@ -32,3 +33,11 @@ Normal:
    
    ReloadMessage: "&aThe config has been successfully reloaded."
    HoverMessage: "&eUse \"&c/modifiers&e\" to view active modifiers"
+   PluginLanguageSet: "&ePlugin language has been set to &a %L&e."
+   
+   
+ModifierEditing:
+   ActiveModifiers: "&eThe active modifiers are:"
+   ModifierEnabled: "&e&lYou have &a&lENABLED &e&l"
+   ModfierDisabled: "&e&lYou have &c&lDISABLED &e&l"
+   

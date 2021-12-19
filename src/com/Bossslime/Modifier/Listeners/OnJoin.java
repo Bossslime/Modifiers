@@ -23,7 +23,7 @@ public class OnJoin implements Listener{
 	public void onJoin(PlayerJoinEvent e) {
 		check = true;
 		Player player = e.getPlayer();
-		String activeModifiers = Chat.color("&eThe active modifiers are:");
+		String activeModifiers = Chat.color(Main.getLanguageConfig().getConfig().getString("ModifierEditing.ActiveModifiers"));
 		
 		for (String key : Main.getModifierConfig().getConfig().getConfigurationSection("Modifiers").getKeys(false)) {
 			if (Main.getSettingsConfig().getConfig().get("Modules." + key) == null) {

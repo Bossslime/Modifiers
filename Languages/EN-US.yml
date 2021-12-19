@@ -26,7 +26,7 @@ Normal:
    - "&7- &a/modifier &7- &2Shows this help menu"
    - "&7- &a/modifier toggle [Modifier] &7- &2Open the GUI to toggle modifiers or toggle a specific modifier"
    - "&7- &a/modifier reload &7- &2Reload the modifier configs"
-   - "&7- &a/modifier language &7- &2Change the modifier plugin language"
+   - "&7- &a/modifier languages &7- &2Change the modifier plugin language"
    - "&7- &a/modifiers &7- &2Open a GUI to list modifier info"
    - "&7"
    - "&7&m--------------------------"
